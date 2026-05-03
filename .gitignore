@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+
+.env
+.env.local
+.env.production
+.docker/docker-compose.override.yml
+
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+/data/db
