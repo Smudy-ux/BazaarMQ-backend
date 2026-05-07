@@ -4,7 +4,7 @@ export const createOrder = async (req, res) => {
     try {
         const { productId, quantity } = req.body;
         const userId = req.user.id;
-        const order = { userId, productId, quantity, createdAt: new Date() };
+        const order = { userId, products: [{ productId, quantity }], createdAt: new Date() };
         await publishToQueue("order.created", order);
         res.status(201).json(order);
     } catch (error) {

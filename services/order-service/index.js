@@ -1,9 +1,15 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import orderRoutes from "./routes/order.route.js";
-import { connectToRabbitMQ } from "./utils/rabbitmq.js";
+import { connectToRabbitMQ, consumeOrderCreated } from "./utils/rabbitmq.js";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+dotenv.config();
 
-connectToRabbitMQ();
+await mongoose.connect(process.env.MONGODB_URI);
+
+await connectToRabbitMQ();
+await consumeOrderCreated();
 
 const app = express();
 
