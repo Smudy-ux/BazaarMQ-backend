@@ -1,9 +1,9 @@
 import express from "express";
-import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import orderRoutes from "./routes/order.route.js";
+import { connectToRabbitMQ } from "./utils/rabbitmq.js";
 
-dotenv.config();
+connectToRabbitMQ();
 
 const app = express();
 
