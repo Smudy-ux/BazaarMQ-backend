@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Smudy-ux/BazaarMQ/issues"
   },
-  "homepage": "https://github.com/Smudy-ux/BazaarMQ#readme"
+  "homepage": "https://github.com/Smudy-ux/BazaarMQ#readme",
+  "dependencies": {
+    "amqplib": "^1.0.6"
+  }
 }

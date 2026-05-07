@@ -21,6 +21,12 @@ app.use(createProxyMiddleware({
     changeOrigin: true,
 }));
 
+app.use(createProxyMiddleware({
+    pathFilter: '/api/order',
+    target: "http://localhost:3003",
+    changeOrigin: true,
+}));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`API Gateway running on port ${PORT}`);
